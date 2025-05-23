@@ -49,7 +49,7 @@ export default function Home() {
             <p><strong>Remarks:</strong> {vehicle.printRemarks}</p> */}
             <div className="QR_code" style={{ marginTop: "10px" }}>
               <QRCode 
-                value={`https://facebook.com`} 
+                value={`http://localhost:3000/api/get-vehicle/${vehicle._id}`} 
                 size={200} 
                 bgColor="#ffffff" 
                 fgColor="#000000" 
