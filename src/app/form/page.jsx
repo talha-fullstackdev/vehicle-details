@@ -2,8 +2,9 @@
 import React from "react";
 import Form from "../components/Form";
 import { useRef } from "react";
-
+import UseTitle from "../hooks/UseTitle";
 const Page = () => {
+  UseTitle("form page")
   const vccNoRef = useRef();
   const vccStatusRef = useRef();
   const vccDateRef = useRef();
