@@ -21,7 +21,7 @@ const vccDetailsSchema = new mongoose.Schema({
   declarationDate: Date,
   ownerCode: String,
   ownerName: String,
-  printRemarks: String,
+  printRemarks: String
 });
 
 export const VehicleModel = mongoose.models.VehicleModel || mongoose.model("VehicleModel", vccDetailsSchema);
