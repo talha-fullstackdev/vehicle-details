@@ -1,0 +1,1 @@
+export const connectionString = `mongodb+srv://nawazt964:yDrkUaTtFMJ64euq@cluster0.7lsnp.mongodb.net/vehicle?retryWrites=true&w=majority&appName=Cluster0`

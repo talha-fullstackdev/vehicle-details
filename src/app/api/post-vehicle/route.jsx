@@ -1,0 +1,24 @@
+import { connectionString } from "@/db/db_connection";
+import { VehicleModel } from "@/db/vehicleModel";
+import mongoose from "mongoose";
+import { NextResponse } from "next/server";
+export const POST = async(req,res)=>{
+    await mongoose.connect(connectionString)
+    try{
+        const body = await req.json()
+        const {vccNo,vccStatus,vccDate,chassisNo,engineNumber,yearBuilt,vehicleDrive,origin,engineCapacity,carriageCapacity,passengerCapacity,vehicleModel,brandName,vehicleType,vehicleColor,specStandard,declarationNo,declarationDate,ownerCode,ownerName,printRemarks} = body
+        const data = new VehicleModel({
+            vccNo,vccStatus,vccDate,chassisNo,engineNumber,yearBuilt,vehicleDrive,origin,engineCapacity,carriageCapacity,passengerCapacity,vehicleModel,brandName,vehicleType,vehicleColor,specStandard,declarationNo,declarationDate,ownerCode,ownerName,printRemarks
+        })
+        const vehicleData = await data.save()
+        return NextResponse.json(
+            {msg:"data saved succesfully",data:vehicleData},{status:200}
+        )
+
+    }catch(err){
+        console.error(err,"server side error")
+        return NextResponse.json(
+            {msg:"server side error occured"},{status:500}
+        )
+    }
+}
