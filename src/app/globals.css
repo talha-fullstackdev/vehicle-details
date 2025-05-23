@@ -32,3 +32,137 @@
 .QR_code {
   margin-left: 16px;
 }
+/* ////////////////// form css */
+
+/* .form-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.form-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.form-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-actions button {
+  background-color: #2563eb;
+  color: white;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-actions button:hover {
+  background-color: #1d4ed8;
+} */
+/* Adjust container to use full screen */
+.form-container {
+  max-width: 100%;
+  height: 87vh;
+  overflow-y: auto;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 1000px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
+  max-height: 90vh; /* important */
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #444;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-actions button {
+  background-color: #2563eb;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.form-actions button:hover {
+  background-color: #1d4ed8;
+}
