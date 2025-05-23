@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 export const POST = async (req, res) => {
   await mongoose.connect(connectionString);
-  
+
   try {
     const body = await req.json();
     const {
@@ -30,11 +30,11 @@ export const POST = async (req, res) => {
       ownerName,
       printRemarks,
     } = body;
-    const check = await VehicleModel.findOne({vccNo})
-    if(check){
-        return NextResponse.json(
-            {msg:"vehcile record already exists in data base "}
-        )
+    const check = await VehicleModel.findOne({ vccNo });
+    if (check) {
+      return NextResponse.json({
+        msg: "vehcile record already exists in data base ",
+      });
     }
     const data = new VehicleModel({
       vccNo,
