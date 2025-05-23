@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 // ✅ Correct (react-qr-code)
 import QRCode from "react-qr-code";
@@ -23,6 +24,7 @@ export default function Home() {
   return (
      <div>
       <h1>This is home page</h1>
+      <Link href="/form">Form</Link>
       <div className="card-container">
         {vehicleData.map((vehicle) => (
           <div key={vehicle._id} className="card">
