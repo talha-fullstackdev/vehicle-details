@@ -61,7 +61,7 @@ export const POST = async (req, res) => {
     });
     const vehicleData = await data.save();
     return NextResponse.json(
-      { msg: "data saved succesfully", data: vehicleData },
+      { msg: "data saved succesfully", data: vehicleData ,succces :true },
       { status: 200 }
     );
   } catch (err) {
