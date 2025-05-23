@@ -27,7 +27,7 @@ export default function Home() {
         {vehicleData.map((vehicle) => (
           <div key={vehicle._id} className="card">
             <h2>{vehicle.brandName} {vehicle.vehicleModel}</h2>
-            <p><strong>VCC No:</strong> {vehicle.vccNo}</p>
+            {/* <p><strong>VCC No:</strong> {vehicle.vccNo}</p>
             <p><strong>Status:</strong> {vehicle.vccStatus}</p>
             <p><strong>VCC Date:</strong> {new Date(vehicle.vccDate).toLocaleDateString()}</p>
             <p><strong>Chassis No:</strong> {vehicle.chassisNo}</p>
@@ -45,8 +45,8 @@ export default function Home() {
             <p><strong>Declaration Date:</strong> {new Date(vehicle.declarationDate).toLocaleDateString()}</p>
             <p><strong>Owner Code:</strong> {vehicle.ownerCode}</p>
             <p><strong>Owner Name:</strong> {vehicle.ownerName}</p>
-            <p><strong>Remarks:</strong> {vehicle.printRemarks}</p>
-            <div style={{ marginTop: "10px" }}>
+            <p><strong>Remarks:</strong> {vehicle.printRemarks}</p> */}
+            <div className="QR_code" style={{ marginTop: "10px" }}>
               <QRCode 
                 value={`https://facebook.com`} 
                 size={200} 
@@ -54,7 +54,7 @@ export default function Home() {
                 fgColor="#000000" 
                 level="H" 
               />
-              <p style={{ fontSize: "12px" }}>Scan to view</p>
+              <p >Scan to view</p>
             </div>
           </div>
         ))}
