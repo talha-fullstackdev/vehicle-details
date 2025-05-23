@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-// ✅ Correct (react-qr-code)
 import QRCode from "react-qr-code";
 export default function Home() {
   const [vehicleData, setVehicleData] = useState([]);
