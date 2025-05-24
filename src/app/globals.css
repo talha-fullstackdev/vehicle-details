@@ -105,3 +105,79 @@
   background-color: #1d4ed8;
 }
 /* ///////////////////////// table CSS */
+
+.container {
+  max-width: 84%;
+  margin: auto;
+  margin-top: 27px;
+  /* padding: 1rem; */
+  font-family: Arial, sans-serif;
+  font-size: 13px; /* reduced font size */
+  border: 1px solid gray;
+}
+
+.header {
+  background-color: #626262;
+  color: white;
+  padding: 19px;
+  font-weight: bold;
+}
+
+.dataContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin: 6px;
+}
+
+.first_div,
+.second_div {
+  flex: 0 0 48%; /* two columns */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.firstdiv-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.firstdiv-item p {
+  margin: 0;
+  font-size: 13px;
+  width: 48%;
+  word-break: break-word;
+}
+
+.red {
+  color: red;
+  font-weight: bold;
+}
+.details{
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight:600;
+
+}
+
+@media (max-width: 768px) {
+  .first_div,
+  .second_div {
+    flex: 0 0 100%;
+  }
+}
+.para {
+     font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: #900;
+    padding-left: 20px;
+    margin: -8px;
+}

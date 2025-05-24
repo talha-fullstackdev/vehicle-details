@@ -1,118 +1,132 @@
+
 "use client";
 import React, { useEffect, useState } from "react";
 
 const GetData = ({ id }) => {
   const [data, setData] = useState(null);
+
   useEffect(() => {
     const getVehicleData = async () => {
-      const response = await fetch(
-        `http://localhost:3000/api/get-vehicle/${id}`
-      );
-      const result = await response.json();
-      console.log(result);
-      setData(result.data);
+      try {
+        const response = await fetch(
+          `http://localhost:3000/api/get-vehicle/${id}`
+        );
+        const result = await response.json();
+        console.log(result);
+        setData(result.data);
+      } catch (error) {
+        console.error("Error fetching vehicle data:", error);
+      }
     };
     getVehicleData();
-  }, []);
+  }, [id]);
+
   return (
     <>
       {data ? (
-        <table border="1" cellPadding="8" cellSpacing="0">
-          <thead>
-            <tr>
-              <th>Field</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Brand Name</td>
-              <td>{data.brandName}</td>
-            </tr>
-            <tr>
-              <td>Carriage Capacity</td>
-              <td>{data.carriageCapacity}</td>
-            </tr>
-            <tr>
-              <td>Chassis No</td>
-              <td>{data.chassisNo}</td>
-            </tr>
-            <tr>
-              <td>Declaration Date</td>
-              <td>{new Date(data.declarationDate).toLocaleDateString()}</td>
-            </tr>
-            <tr>
-              <td>Declaration No</td>
-              <td>{data.declarationNo}</td>
-            </tr>
-            <tr>
-              <td>Engine Capacity</td>
-              <td>{data.engineCapacity}</td>
-            </tr>
-            <tr>
-              <td>Engine Number</td>
-              <td>{data.engineNumber}</td>
-            </tr>
-            <tr>
-              <td>Origin</td>
-              <td>{data.origin}</td>
-            </tr>
-            <tr>
-              <td>Owner Code</td>
-              <td>{data.ownerCode}</td>
-            </tr>
-            <tr>
-              <td>Owner Name</td>
-              <td>{data.ownerName}</td>
-            </tr>
-            <tr>
-              <td>Passenger Capacity</td>
-              <td>{data.passengerCapacity}</td>
-            </tr>
-            <tr>
-              <td>Print Remarks</td>
-              <td>{data.printRemarks}</td>
-            </tr>
-            <tr>
-              <td>Specification Standard</td>
-              <td>{data.specStandard}</td>
-            </tr>
-            <tr>
-              <td>VCC Date</td>
-              <td>{new Date(data.vccDate).toLocaleDateString()}</td>
-            </tr>
-            <tr>
-              <td>VCC No</td>
-              <td>{data.vccNo}</td>
-            </tr>
-            <tr>
-              <td>VCC Status</td>
-              <td>{data.vccStatus}</td>
-            </tr>
-            <tr>
-              <td>Vehicle Color</td>
-              <td>{data.vehicleColor}</td>
-            </tr>
-            <tr>
-              <td>Vehicle Drive</td>
-              <td>{data.vehicleDrive}</td>
-            </tr>
-            <tr>
-              <td>Vehicle Model</td>
-              <td>{data.vehicleModel}</td>
-            </tr>
-            <tr>
-              <td>Vehicle Type</td>
-              <td>{data.vehicleType}</td>
-            </tr>
-            <tr>
-              <td>Year Built</td>
-              <td>{data.yearBuilt}</td>
-            </tr>
-          </tbody>
-        </table>
+       <div className="container">
+        <header className="header">View VCC Details</header>
+        <div className="para"><p>VCC/Vehicle Details</p></div>
+        <div className="dataContainer">
+            <div className="first_div">
+            <div  className="firstdiv-item">
+                <p>VCC No :</p>
+                <p className="details">{data.vccNo}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>VCC Generation Date :</p>
+                <p className="details">{new Date(data.vccDate).toLocaleDateString()}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Engine Number :</p>
+                <p className="details">{data.engineNumber}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Vehicle Drive :</p>
+                <p className="details">{data.vehicleDrive}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Engine Capacity :</p>
+                <p className="details">{data.engineCapacity}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Passenger Capacity :</p>
+                <p className="details">{data.passengerCapacity}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Vehicle Brand Name :</p>
+                <p className="details">{data.brandName}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Vehicle Color :</p>
+                <p className="details">{data.vehicleColor}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Declaration Number :</p>
+                <p className="details">{data.declarationNo}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Owner Code :</p>
+                <p className="details">{data.ownerCode}</p>
+              </div>
+              <div className="firstdiv-item">
+                <p>Print Remarks :</p>
+                <p className="details">{data.printRemarks}</p>
+              </div>
+            </div>
+            {/* /////////////////////////sond div */}
+            <div className="second_div">
+                <div className="firstdiv-item">
+                  <p>VCC Status :</p>
+                  <p className="details">
+                    {data.vccStatus === "Printed/Downloaded" ? (
+                      <span className="red">{data.vccStatus}</span>
+                    ) : (
+                      data.vccStatus
+                    )}
+                  </p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Chassis No :</p>
+                  <p className="details">{data.chassisNo}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Year of Built :</p>
+                  <p className="details">{data.yearBuilt}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Country of Origin :</p>
+                  <p className="details">{data.origin}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Carriage Capacity :</p>
+                  <p className="details">{data.carriageCapacity}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Vehicle Model :</p>
+                  <p className="details">{data.vehicleModel}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Vehicle Type :</p>
+                  <p className="details">{data.vehicleType}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Specification Standard Name :</p>
+                  <p className="details">{data.specStandard}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Declaration Date :</p>
+                  <p className="details">{new Date(data.declarationDate).toLocaleDateString()}</p>
+                </div>
+                <div className="firstdiv-item">
+                  <p>Owner Name :</p>
+                  <p className="details">{data.ownerName}</p>
+                </div>
+            </div>
+        </div>
+       </div>
       ) : (
-        <h1>loading.....</h1>
+        <p>Loading data...</p>
       )}
     </>
   );
