@@ -50,7 +50,7 @@ export default function Home() {
             <div className="QR_code" style={{ marginTop: "10px" }}>
               <Link href={`/${vehicle._id}`}>
               <QRCode 
-                value={`http://localhost:3000/api/get-vehicle/${vehicle._id}`} 
+                value={`http://localhost:3000/${vehicle._id}`} 
                 size={200} 
                 bgColor="#ffffff" 
                 fgColor="#000000" 
