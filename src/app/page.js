@@ -22,8 +22,11 @@ export default function Home() {
 
   return (
      <div>
-      <h1>This is home page</h1>
-      <Link href="/form">Form</Link>
+      <div className="home_header">
+       <p className="header-title">QR codes page</p>
+      <Link className="link" href="/form"><p className="header-btn">Form</p></Link>
+       </div>
+     
       <div className="card-container">
         {vehicleData.map((vehicle) => (
           <div key={vehicle._id} className="card">
@@ -38,7 +41,6 @@ export default function Home() {
                 level="H" 
               />
               </Link>
-              <p >Scan to view</p>
             </div>
           </div>
         ))}
