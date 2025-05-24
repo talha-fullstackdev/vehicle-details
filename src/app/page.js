@@ -48,6 +48,7 @@ export default function Home() {
             <p><strong>Owner Name:</strong> {vehicle.ownerName}</p>
             <p><strong>Remarks:</strong> {vehicle.printRemarks}</p> */}
             <div className="QR_code" style={{ marginTop: "10px" }}>
+              <Link href={`/${vehicle._id}`}>
               <QRCode 
                 value={`http://localhost:3000/api/get-vehicle/${vehicle._id}`} 
                 size={200} 
@@ -55,6 +56,7 @@ export default function Home() {
                 fgColor="#000000" 
                 level="H" 
               />
+              </Link>
               <p >Scan to view</p>
             </div>
           </div>
