@@ -1,7 +1,7 @@
 
 "use client";
 import React, { useEffect, useState } from "react";
-
+import Loading from "./Loading";
 const GetData = ({ id }) => {
   const [data, setData] = useState(null);
 
@@ -13,7 +13,9 @@ const GetData = ({ id }) => {
         );
         const result = await response.json();
         console.log(result);
-        setData(result.data);
+        setTimeout(()=>{
+             setData(result.data);
+        },1000)
       } catch (error) {
         console.error("Error fetching vehicle data:", error);
       }
@@ -126,7 +128,7 @@ const GetData = ({ id }) => {
         </div>
        </div>
       ) : (
-        <p>Loading data...</p>
+        <Loading/>
       )}
     </>
   );

@@ -69,7 +69,7 @@ const Form = ({ data, clearInputs }) => {
 
   return (
     <form className="form-container" onSubmit={handleSubmit}>
-      <h1 className="form_heading">fill vehicle data</h1>
+      <h1 className="form_heading">vehicle form</h1>
       <div className="form-card">
         <div className="form-grid">
           <div className="form-group">
